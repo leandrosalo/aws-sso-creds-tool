@@ -1,5 +1,5 @@
 {
-  "name": "aws-sso-credentials",
+  "name": "aws-sso-creds-tool",
   "description": "script to (almost)auto update aws sso credentials",
   "version": "1.0.0",
   "main": "app.js",
@@ -15,5 +15,15 @@
     "configparser": "^0.3.9",
     "dotenv": "^10.0.0",
     "open": "^8.2.1"
-  }
+  },
+  "keywords": [
+    "aws",
+    "sso",
+    "cloud",
+    "credentials",
+    "aws sso credentials",
+    "aws authentication",
+    "aws single sign on",
+    "single sign on"
+  ]
 }
