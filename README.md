@@ -1,19 +1,20 @@
 # AWS SSO Credentials Tool
 ##### (couldn't find a better name)
 
-This **AWS SSO Credentials Tool** is a script in nodejs to (almost)automatically update your locally credentials file of aws.
+This **AWS SSO Credentials Tool** is a script in nodejs to (almost)automatically update your local credentials file of aws.
 
 I say _almost_ because at some point you'll need to click a button (or two in the worst scenario).
 
 ## Motivation
-The SSO credentials expires every day, so I did not want to update this file manually. 
+The SSO credentials expires every day, so I did not wanna update this file manually. 
 
 ## Requirements
-* *Necessary:* Node.js - [Install Node.js](https://nodejs.org/en/), including the npm package management tool.
+* Node.js - [Install Node.js](https://nodejs.org/en/), including the npm package management tool.
 
 ## How to use
 
 ### Update .env file with the correct params
+
 It is required to set the sso url like this:
 ```shell
 SSO_URL="https://<your-project>.awsapps.com/start#/"
@@ -24,9 +25,9 @@ If you want to store it as __[123456789098_AWSRoleName]__ add this:
 ```shell
 USE_ACCOUNT_ID=true
 ````
-_if you want a different profile name update the code..._
+_if you want a different profile name pattern update the code..._
 
-By default, it uses us-east-1 as aws region and searches for the credentials file in the default path.
+It uses _us-east-1_ as default aws region and searches for the credentials file in the default path.
 If you want to change it, add this:
 ```shell
 REGION=us-east-1
@@ -50,6 +51,8 @@ AWS_CREDENTIALS_PATH=/Users/you/.aws/credentials
 
 
 7. Done!
+
+For consecuents runs just start from step 3.
 
 # Author
 * Leandro Salomon
