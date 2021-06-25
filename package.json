@@ -1,7 +1,7 @@
 {
   "name": "aws-sso-credentials",
   "description": "script to (almost)auto update aws sso credentials",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "app.js",
   "license": "MIT",
   "repository": {
