@@ -41,8 +41,15 @@ AWS_CREDENTIALS_PATH=/Users/you/.aws/credentials
     1. Log in to aws if you are not already
     2. The code for device authentication will be auto filled
     3. Click on Sign In
+
+<img width="346" alt="Screen Shot 2021-06-25 at 11 59 23" src="https://user-images.githubusercontent.com/7031690/123454656-2e73bb00-d5b7-11eb-8db7-a79fda950bc5.png">
+
 5. When the success alert shows then come back to the terminal and press a key
-6. Done!
+
+<img width="346" alt="Screen Shot 2021-06-25 at 11 59 36" src="https://user-images.githubusercontent.com/7031690/123454778-52cf9780-d5b7-11eb-9081-c2a08c2430b0.png">
+
+
+7. Done!
 
 # Author
 * Leandro Salomon
