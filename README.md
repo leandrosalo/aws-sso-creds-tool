@@ -5,8 +5,10 @@ This **AWS SSO Credentials Tool** is a script in nodejs to (almost)automatically
 
 I say _almost_ because at some point you'll need to click a button (or two in the worst scenario).
 
+_Disclaimer: this is NOT intended to use as a dependency, it is just a script. The only reason it's published is for it to be more easy to find._
+
 ## Motivation
-The SSO credentials expires every day, so I did not wanna update this file manually. 
+The SSO credentials expires every day, so I did not want to update this file manually. 
 
 ## Requirements
 * Node.js - [Install Node.js](https://nodejs.org/en/), including the npm package management tool.
