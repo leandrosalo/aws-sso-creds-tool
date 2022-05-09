@@ -1,7 +1,7 @@
 const dotenv = require('dotenv')
 dotenv.config()
 
-const { awsCredentialsPath, useAccountId} = require('./params')
+const { awsCredentialsPath, useAccountId, defaultSection, sso_accounts } = require('./params')
 const ConfigParser = require('configparser')
 const {
     getAccountRoleCredentials,
@@ -32,15 +32,26 @@ const updateCredentials = async () => {
         const { roleList } = await getAccountRoles(accessToken, accountId)
 
         for (const { roleName } of roleList) {
-            const { accessKeyId, secretAccessKey, sessionToken } = await getAccountRoleCredentials(accessToken, accountId, roleName)
+            if (sso_accounts.includes(accountName)) {
+                const { accessKeyId, secretAccessKey, sessionToken } = await getAccountRoleCredentials(accessToken, accountId, roleName)
 
-            // default format is [account-name_AWSRoleName]
-            const account_section_name = useAccountId ? accountId : accountName + '_' + roleName
-            !config.sections().includes(account_section_name) ? config.addSection(account_section_name) : ''
-            config.set(account_section_name, 'aws_access_key_id', accessKeyId)
-            config.set(account_section_name, 'aws_secret_access_key', secretAccessKey)
-            config.set(account_section_name, 'aws_session_token', sessionToken)
-            console.log(config.items(account_section_name))
+                // default format is [account-name_AWSRoleName]
+                const account_section_name = useAccountId ? accountId + '_' + roleName : accountName + '_' + roleName
+                !config.sections().includes(account_section_name) ? config.addSection(account_section_name) : ''
+                config.set(account_section_name, 'aws_access_key_id', accessKeyId)
+                config.set(account_section_name, 'aws_secret_access_key', secretAccessKey)
+                config.set(account_section_name, 'aws_session_token', sessionToken)
+                console.log(config.items(account_section_name))
+                
+                if (account_section_name === defaultSection) {
+                    const default_section = 'default'
+                    !config.sections().includes(default_section) ? config.addSection(default_section) : ''
+                    
+                    config.set(default_section, 'aws_access_key_id', accessKeyId)
+                    config.set(default_section, 'aws_secret_access_key', secretAccessKey)
+                    config.set(default_section, 'aws_session_token', sessionToken)
+                }
+            }
         }
     }
 

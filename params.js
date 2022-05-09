@@ -7,5 +7,6 @@ module.exports = Object.freeze({
     useAccountId: process.env.USE_ACCOUNT_ID === 'true',
     sso_accounts: process.env.ACCOUNTS?.split(','),
     region: process.env.REGION ?? 'us-east-1',
-    clientName: os.hostname()
+    clientName: os.hostname(),
+    defaultSection: process.env.DEFAULT_SECTION ?? 'ViewOnlyAccess'
 });
